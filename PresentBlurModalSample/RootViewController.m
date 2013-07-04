@@ -8,7 +8,9 @@
 
 #import "RootViewController.h"
 #import "UIImage+ImageEffects.h"
+#import "AvatarCell.h"
 
+static NSString *CellIdentifier = @"Cell";
 
 @implementation RootViewController {
     BOOL isModalPresentation_;
@@ -16,8 +18,8 @@
     UIImageView *modalBgView_;
 }
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
+- (void)loadView {
+    [super loadView];
     UIImageView *bgView = [[UIImageView alloc] initWithFrame:self.view.bounds];
     bgView.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
     bgView.image = [UIImage imageNamed:@"bg1.jpg"];
@@ -39,7 +41,27 @@
     modalBgView_.clipsToBounds = YES;
     modalBgView_.contentMode = UIViewContentModeBottom;
     [modalView_ addSubview:modalBgView_];
+
+    UICollectionViewFlowLayout *collectionViewFlowLayout = [[UICollectionViewFlowLayout alloc] init];
+
+    [collectionViewFlowLayout setScrollDirection:UICollectionViewScrollDirectionVertical];
+    [collectionViewFlowLayout setItemSize:CGSizeMake(100, 100)];
+    [collectionViewFlowLayout setMinimumInteritemSpacing:0];
+    [collectionViewFlowLayout setMinimumLineSpacing:10];
+    [collectionViewFlowLayout setSectionInset:UIEdgeInsetsMake(20, 10, 0, 10)];
+
+    _collectionView = [[UICollectionView alloc] initWithFrame:modalView_.bounds collectionViewLayout:collectionViewFlowLayout];
+    [_collectionView setDelegate:self];
+    [_collectionView setDataSource:self];
+    [_collectionView setAlwaysBounceHorizontal:YES];
+    [_collectionView setAutoresizingMask:UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleRightMargin];
+    _collectionView.backgroundColor = [UIColor clearColor];
+
+    [_collectionView registerClass:[AvatarCell class] forCellWithReuseIdentifier:CellIdentifier];
+
+    [modalView_ addSubview:_collectionView];
 }
+
 
 - (UIImage *)captureView:(UIView *)view {
     CGRect screenRect = view.bounds;
@@ -73,10 +95,10 @@
     rect.origin.y = isModalPresentation_ ? self.view.bounds.size.height - rect.size.height : self.view.bounds.size.height;
     bgFrame.size.height = isModalPresentation_ ? self.view.bounds.size.height - rect.origin.y: 0;
 
-    [UIView animateWithDuration:1.5
+    [UIView animateWithDuration:0.5
                           delay:0
-         usingSpringWithDamping:1.0
-          initialSpringVelocity:9.0
+         usingSpringWithDamping:0.9
+          initialSpringVelocity:20.0
                         options:UIViewAnimationOptionCurveEaseInOut
                      animations:^{
                          modalView_.frame = rect;
@@ -84,5 +106,16 @@
                      }
                      completion:nil];
 }
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return 5;
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    AvatarCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:CellIdentifier forIndexPath:indexPath];
+
+    return cell;
+}
+
 
 @end

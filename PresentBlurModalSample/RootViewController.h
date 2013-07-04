@@ -9,5 +9,6 @@
 @import UIKit;
 
 
-@interface RootViewController : UIViewController
+@interface RootViewController : UIViewController <UICollectionViewDelegate, UICollectionViewDataSource>
+@property (strong, nonatomic) UICollectionView *collectionView;
 @end

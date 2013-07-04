@@ -19,7 +19,9 @@
 		190C435A177D8BA4005E4E03 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 190C4342177D8BA4005E4E03 /* UIKit.framework */; };
 		D71AA3195217E621104E12A0 /* bg1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D71AA46653B75CAE7D8B5068 /* bg1.jpg */; };
 		D71AAC38F1652D07FBF2A112 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D71AAA280CE8FE54F6E6FCDA /* RootViewController.m */; };
+		D71AACE876DD0560C7CD2CD9 /* AvatarCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D71AAE0E6824789A6EE341ED /* AvatarCell.m */; };
 		D71AADD9C9BC88B45425642A /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = D71AADBAA085488C96520465 /* UIImage+ImageEffects.m */; };
+		D71AAE8C30C9A5B6405D9200 /* avatar.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D71AAEA96ACC448D5A7C52F3 /* avatar.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,10 +49,13 @@
 		190C4356177D8BA4005E4E03 /* PresentBlurModalSampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PresentBlurModalSampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		190C4357177D8BA4005E4E03 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		D71AA09C9A70B68D612C4B71 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		D71AA332653B96EC172C61F7 /* AvatarCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AvatarCell.h; sourceTree = "<group>"; };
 		D71AA46653B75CAE7D8B5068 /* bg1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg1.jpg; sourceTree = "<group>"; };
 		D71AAA280CE8FE54F6E6FCDA /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		D71AAA3F702F5252AF5C42D3 /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
 		D71AADBAA085488C96520465 /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
+		D71AAE0E6824789A6EE341ED /* AvatarCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AvatarCell.m; sourceTree = "<group>"; };
+		D71AAEA96ACC448D5A7C52F3 /* avatar.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = avatar.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +123,9 @@
 				D71AAA3F702F5252AF5C42D3 /* UIImage+ImageEffects.h */,
 				D71AADBAA085488C96520465 /* UIImage+ImageEffects.m */,
 				D71AA46653B75CAE7D8B5068 /* bg1.jpg */,
+				D71AAE0E6824789A6EE341ED /* AvatarCell.m */,
+				D71AA332653B96EC172C61F7 /* AvatarCell.h */,
+				D71AAEA96ACC448D5A7C52F3 /* avatar.jpg */,
 			);
 			path = PresentBlurModalSample;
 			sourceTree = "<group>";
@@ -211,6 +219,7 @@
 				190C4349177D8BA4005E4E03 /* InfoPlist.strings in Resources */,
 				190C4351177D8BA4005E4E03 /* Images.xcassets in Resources */,
 				D71AA3195217E621104E12A0 /* bg1.jpg in Resources */,
+				D71AAE8C30C9A5B6405D9200 /* avatar.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -232,6 +241,7 @@
 				190C434B177D8BA4005E4E03 /* main.m in Sources */,
 				D71AAC38F1652D07FBF2A112 /* RootViewController.m in Sources */,
 				D71AADD9C9BC88B45425642A /* UIImage+ImageEffects.m in Sources */,
+				D71AACE876DD0560C7CD2CD9 /* AvatarCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
